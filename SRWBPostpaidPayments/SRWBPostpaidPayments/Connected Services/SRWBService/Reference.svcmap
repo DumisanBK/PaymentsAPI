@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="24c7d716-6a78-4990-8a68-7ffcaeb9744e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?wsdl=wsdl0" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SRWBPaymentsAPIServices.xsd" MetadataType="Schema" ID="66fce595-cdf1-48c2-97c0-e7547f098b26" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd0" />
+    <MetadataFile FileName="SRWBPaymentsAPIServices1.xsd" MetadataType="Schema" ID="a32f007e-5c0f-4add-8fba-7cd22edb58ef" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd6" />
+    <MetadataFile FileName="SRWBPaymentsAPIServices.wsdl" MetadataType="Wsdl" ID="f7a5f313-3dc7-4c58-a8c6-b76d1f72548a" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?wsdl=wsdl0" />
+    <MetadataFile FileName="SRWBPaymentsAPIServices2.xsd" MetadataType="Schema" ID="f56bb5e8-6416-4bea-9ee7-fbaab37e0335" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd4" />
+    <MetadataFile FileName="SRWBPaymentsAPIServices3.xsd" MetadataType="Schema" ID="dfb7fa25-8686-412a-aece-8ea1552a8103" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd3" />
+    <MetadataFile FileName="SRWBPaymentsAPIServices4.xsd" MetadataType="Schema" ID="f2d438df-fa6b-4e77-92fe-1a87676458c7" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd7" />
+    <MetadataFile FileName="SRWBPaymentsAPIServices5.xsd" MetadataType="Schema" ID="322f38b7-1e68-496a-be78-d0d7067a1345" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd1" />
+    <MetadataFile FileName="SRWBPaymentsAPIServices6.xsd" MetadataType="Schema" ID="3829659d-673f-4568-8f5a-33bc6e5d1389" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd5" />
+    <MetadataFile FileName="SRWBPaymentsAPIServices7.xsd" MetadataType="Schema" ID="1905afed-896f-4c0d-9ad2-41f017d68beb" SourceId="1" SourceUrl="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

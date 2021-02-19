@@ -1,0 +1,1685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://nbs.t24.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://nbs.t24.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://nbs.t24.org/">
+      <s:element name="GetAccounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetAccountsResult" type="tns:CustomerAccounts" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerAccounts">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Accounts" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumberOfAccounts" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCustomerDetailsResult" type="tns:CustomerInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CustomerInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LegacyCustomerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CellPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ValidateAccountResult" type="tns:AccountData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountTitle" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DoesAccountExist" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PostingRestriction" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAccountClosed" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LegacyAcctID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="OpeningDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsAccountAllowedToTransact" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="InactiveMarker" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBalanceForAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBalanceForAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetBalanceForAccountResult" type="tns:AccountBalance" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AccountBalance">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ActualBalance" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AvailableBalance" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Category" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PostingRestriction" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Success" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostRawOFS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OFSMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostRawOFSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PostRawOFSResult" type="tns:OFSTxn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OFSTxn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDuplicateTrapResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLiveRecordNotChangedResponse" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="TxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostRawOFSWithPort">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OFSMessage" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Port" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostRawOFSWithPortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PostRawOFSWithPortResult" type="tns:OFSTxn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostRawOFSWithIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Port" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="OFSMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostRawOFSWithIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PostRawOFSWithIPResult" type="tns:OFSTxn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExchangeRates">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetExchangeRatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExchangeRatesResult" type="tns:ArrayOfExchangeRateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExchangeRateInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExchangeRateInfo" type="tns:ExchangeRateInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExchangeRateInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrencyKey" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BuyRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="MidRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SellRate" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReverseTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TransactionRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PortNumber" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReverseTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReverseTransactionResult" type="tns:TransactionReversalData" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TransactionReversalData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FTNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSystemDate">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSystemDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSystemDateResult" type="tns:T24DateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="T24DateInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="DateToday" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastWorkingDay" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="NextWorkingDay" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtToday" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtLastWorkingDay" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtNextWorkingDay" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="JulianDate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsT24Online">
+        <s:complexType />
+      </s:element>
+      <s:element name="IsT24OnlineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsT24OnlineResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCompanyResult" type="tns:CompanyInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CompanyInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Mnemonic" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFTDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TxnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFTDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetFTDetailsResult" type="tns:FTInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="FTInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DebitAcctNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DebitCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DebitValueDate" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DebitTheirRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditTheirRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditAcctNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditValueDate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreditAmount" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProcessingDate" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtProcessingDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtCreditValueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dtDebitValueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inputter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Authoriser" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReversed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTTDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TxnID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CompanyID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTTDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTTDetailsResult" type="tns:TTInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TTInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TransactionCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TellerID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DrCrMarker" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency2" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountLocal2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountFcy2" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValueDate2" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Narrative2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Narrative1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency1" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ValueDate1" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountLocal1" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountFcy1" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="DateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TheirReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OurReference" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeAmountLocal" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ChargeAmountFcy" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChargeAccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ChargeCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Inputter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Authoriser" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsReversed" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LockFunds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MessageID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LockFundsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LockFundsResult" type="tns:LockingResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LockingResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LockID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsLocked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsDuplicateTrapResponse" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UnlockFunds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LockID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UnlockFundsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UnlockFundsResult" type="tns:UnLockingResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UnLockingResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LockID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="FromDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ToDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsUnLocked" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="SocketResponse" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="T24Response" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSRequest" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OFSResponse" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PossibleErrorMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CanSystemsPostOfflineTxns">
+        <s:complexType />
+      </s:element>
+      <s:element name="CanSystemsPostOfflineTxnsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CanSystemsPostOfflineTxnsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerAccounts" type="tns:CustomerAccounts" />
+      <s:element name="CustomerInfo" type="tns:CustomerInfo" />
+      <s:element name="AccountData" type="tns:AccountData" />
+      <s:element name="AccountBalance" type="tns:AccountBalance" />
+      <s:element name="OFSTxn" type="tns:OFSTxn" />
+      <s:element name="ArrayOfExchangeRateInfo" nillable="true" type="tns:ArrayOfExchangeRateInfo" />
+      <s:element name="TransactionReversalData" type="tns:TransactionReversalData" />
+      <s:element name="T24DateInfo" type="tns:T24DateInfo" />
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="CompanyInfo" type="tns:CompanyInfo" />
+      <s:element name="FTInfo" type="tns:FTInfo" />
+      <s:element name="TTInfo" type="tns:TTInfo" />
+      <s:element name="LockingResponse" type="tns:LockingResponse" />
+      <s:element name="UnLockingResponse" type="tns:UnLockingResponse" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAccounts" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAccount" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceForAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBalanceForAccount" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceForAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBalanceForAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSSoapIn">
+    <wsdl:part name="parameters" element="tns:PostRawOFS" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSSoapOut">
+    <wsdl:part name="parameters" element="tns:PostRawOFSResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithPortSoapIn">
+    <wsdl:part name="parameters" element="tns:PostRawOFSWithPort" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithPortSoapOut">
+    <wsdl:part name="parameters" element="tns:PostRawOFSWithPortResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithIPSoapIn">
+    <wsdl:part name="parameters" element="tns:PostRawOFSWithIP" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithIPSoapOut">
+    <wsdl:part name="parameters" element="tns:PostRawOFSWithIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExchangeRates" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExchangeRatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ReverseTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ReverseTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemDateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSystemDate" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemDateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSystemDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsT24OnlineSoapIn">
+    <wsdl:part name="parameters" element="tns:IsT24Online" />
+  </wsdl:message>
+  <wsdl:message name="IsT24OnlineSoapOut">
+    <wsdl:part name="parameters" element="tns:IsT24OnlineResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:GetCompany" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:GetCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFTDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFTDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetFTDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFTDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTTDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTTDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTTDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTTDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LockFundsSoapIn">
+    <wsdl:part name="parameters" element="tns:LockFunds" />
+  </wsdl:message>
+  <wsdl:message name="LockFundsSoapOut">
+    <wsdl:part name="parameters" element="tns:LockFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnlockFundsSoapIn">
+    <wsdl:part name="parameters" element="tns:UnlockFunds" />
+  </wsdl:message>
+  <wsdl:message name="UnlockFundsSoapOut">
+    <wsdl:part name="parameters" element="tns:UnlockFundsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanSystemsPostOfflineTxnsSoapIn">
+    <wsdl:part name="parameters" element="tns:CanSystemsPostOfflineTxns" />
+  </wsdl:message>
+  <wsdl:message name="CanSystemsPostOfflineTxnsSoapOut">
+    <wsdl:part name="parameters" element="tns:CanSystemsPostOfflineTxnsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsHttpGetIn">
+    <wsdl:part name="CustomerNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerAccounts" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailsHttpGetIn">
+    <wsdl:part name="CustomerNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:CustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAccountHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:AccountData" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceForAccountHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceForAccountHttpGetOut">
+    <wsdl:part name="Body" element="tns:AccountBalance" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSHttpGetIn">
+    <wsdl:part name="OFSMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSHttpGetOut">
+    <wsdl:part name="Body" element="tns:OFSTxn" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithPortHttpGetIn">
+    <wsdl:part name="OFSMessage" type="s:string" />
+    <wsdl:part name="Port" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithPortHttpGetOut">
+    <wsdl:part name="Body" element="tns:OFSTxn" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithIPHttpGetIn">
+    <wsdl:part name="IPAddress" type="s:string" />
+    <wsdl:part name="Port" type="s:string" />
+    <wsdl:part name="OFSMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:OFSTxn" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRatesHttpGetIn" />
+  <wsdl:message name="GetExchangeRatesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfExchangeRateInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionHttpGetIn">
+    <wsdl:part name="TransactionRef" type="s:string" />
+    <wsdl:part name="CompanyCode" type="s:string" />
+    <wsdl:part name="PortNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionHttpGetOut">
+    <wsdl:part name="Body" element="tns:TransactionReversalData" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemDateHttpGetIn" />
+  <wsdl:message name="GetSystemDateHttpGetOut">
+    <wsdl:part name="Body" element="tns:T24DateInfo" />
+  </wsdl:message>
+  <wsdl:message name="IsT24OnlineHttpGetIn" />
+  <wsdl:message name="IsT24OnlineHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyHttpGetIn">
+    <wsdl:part name="CompanyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyHttpGetOut">
+    <wsdl:part name="Body" element="tns:CompanyInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFTDetailsHttpGetIn">
+    <wsdl:part name="TxnID" type="s:string" />
+    <wsdl:part name="CompanyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:FTInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTTDetailsHttpGetIn">
+    <wsdl:part name="TxnID" type="s:string" />
+    <wsdl:part name="CompanyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTTDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:TTInfo" />
+  </wsdl:message>
+  <wsdl:message name="LockFundsHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="FromDate" type="s:string" />
+    <wsdl:part name="ToDate" type="s:string" />
+    <wsdl:part name="MessageID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LockFundsHttpGetOut">
+    <wsdl:part name="Body" element="tns:LockingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnlockFundsHttpGetIn">
+    <wsdl:part name="LockID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UnlockFundsHttpGetOut">
+    <wsdl:part name="Body" element="tns:UnLockingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanSystemsPostOfflineTxnsHttpGetIn" />
+  <wsdl:message name="CanSystemsPostOfflineTxnsHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsHttpPostIn">
+    <wsdl:part name="CustomerNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAccountsHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerAccounts" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailsHttpPostIn">
+    <wsdl:part name="CustomerNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCustomerDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:CustomerInfo" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAccountHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:AccountData" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceForAccountHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBalanceForAccountHttpPostOut">
+    <wsdl:part name="Body" element="tns:AccountBalance" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSHttpPostIn">
+    <wsdl:part name="OFSMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSHttpPostOut">
+    <wsdl:part name="Body" element="tns:OFSTxn" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithPortHttpPostIn">
+    <wsdl:part name="OFSMessage" type="s:string" />
+    <wsdl:part name="Port" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithPortHttpPostOut">
+    <wsdl:part name="Body" element="tns:OFSTxn" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithIPHttpPostIn">
+    <wsdl:part name="IPAddress" type="s:string" />
+    <wsdl:part name="Port" type="s:string" />
+    <wsdl:part name="OFSMessage" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PostRawOFSWithIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:OFSTxn" />
+  </wsdl:message>
+  <wsdl:message name="GetExchangeRatesHttpPostIn" />
+  <wsdl:message name="GetExchangeRatesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfExchangeRateInfo" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionHttpPostIn">
+    <wsdl:part name="TransactionRef" type="s:string" />
+    <wsdl:part name="CompanyCode" type="s:string" />
+    <wsdl:part name="PortNumber" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionHttpPostOut">
+    <wsdl:part name="Body" element="tns:TransactionReversalData" />
+  </wsdl:message>
+  <wsdl:message name="GetSystemDateHttpPostIn" />
+  <wsdl:message name="GetSystemDateHttpPostOut">
+    <wsdl:part name="Body" element="tns:T24DateInfo" />
+  </wsdl:message>
+  <wsdl:message name="IsT24OnlineHttpPostIn" />
+  <wsdl:message name="IsT24OnlineHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyHttpPostIn">
+    <wsdl:part name="CompanyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCompanyHttpPostOut">
+    <wsdl:part name="Body" element="tns:CompanyInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetFTDetailsHttpPostIn">
+    <wsdl:part name="TxnID" type="s:string" />
+    <wsdl:part name="CompanyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFTDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:FTInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTTDetailsHttpPostIn">
+    <wsdl:part name="TxnID" type="s:string" />
+    <wsdl:part name="CompanyID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTTDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:TTInfo" />
+  </wsdl:message>
+  <wsdl:message name="LockFundsHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="Amount" type="s:string" />
+    <wsdl:part name="FromDate" type="s:string" />
+    <wsdl:part name="ToDate" type="s:string" />
+    <wsdl:part name="MessageID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LockFundsHttpPostOut">
+    <wsdl:part name="Body" element="tns:LockingResponse" />
+  </wsdl:message>
+  <wsdl:message name="UnlockFundsHttpPostIn">
+    <wsdl:part name="LockID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UnlockFundsHttpPostOut">
+    <wsdl:part name="Body" element="tns:UnLockingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanSystemsPostOfflineTxnsHttpPostIn" />
+  <wsdl:message name="CanSystemsPostOfflineTxnsHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:portType name="T24ClientSoap">
+    <wsdl:operation name="GetAccounts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that fetches accounts linked to a CIF.</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountsSoapIn" />
+      <wsdl:output message="tns:GetAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that fetches customer details</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:GetCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that validates an account to check if it is closed or has a posting restriction.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateAccountSoapIn" />
+      <wsdl:output message="tns:ValidateAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceForAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method retrieves the account balance given an account.</wsdl:documentation>
+      <wsdl:input message="tns:GetBalanceForAccountSoapIn" />
+      <wsdl:output message="tns:GetBalanceForAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS with a default web service port</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSSoapIn" />
+      <wsdl:output message="tns:PostRawOFSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithPort">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS on a specified port</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSWithPortSoapIn" />
+      <wsdl:output message="tns:PostRawOFSWithPortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS on a specified port and IP address</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSWithIPSoapIn" />
+      <wsdl:output message="tns:PostRawOFSWithIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method returns exchange rates for the major currencies</wsdl:documentation>
+      <wsdl:input message="tns:GetExchangeRatesSoapIn" />
+      <wsdl:output message="tns:GetExchangeRatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method to reverse a transaction given an FT number</wsdl:documentation>
+      <wsdl:input message="tns:ReverseTransactionSoapIn" />
+      <wsdl:output message="tns:ReverseTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets the date of an environment</wsdl:documentation>
+      <wsdl:input message="tns:GetSystemDateSoapIn" />
+      <wsdl:output message="tns:GetSystemDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsT24Online">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method checks if T24 is online.</wsdl:documentation>
+      <wsdl:input message="tns:IsT24OnlineSoapIn" />
+      <wsdl:output message="tns:IsT24OnlineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method returns a company name given an ID.</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanySoapIn" />
+      <wsdl:output message="tns:GetCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets details about a particular FT.</wsdl:documentation>
+      <wsdl:input message="tns:GetFTDetailsSoapIn" />
+      <wsdl:output message="tns:GetFTDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTTDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets details about a particular TT.</wsdl:documentation>
+      <wsdl:input message="tns:GetTTDetailsSoapIn" />
+      <wsdl:output message="tns:GetTTDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LockFunds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that locks funds on a particular account</wsdl:documentation>
+      <wsdl:input message="tns:LockFundsSoapIn" />
+      <wsdl:output message="tns:LockFundsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockFunds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that unlocks funds on a particular account</wsdl:documentation>
+      <wsdl:input message="tns:UnlockFundsSoapIn" />
+      <wsdl:output message="tns:UnlockFundsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanSystemsPostOfflineTxns">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method checks if offline systems are allowed to post transactions.</wsdl:documentation>
+      <wsdl:input message="tns:CanSystemsPostOfflineTxnsSoapIn" />
+      <wsdl:output message="tns:CanSystemsPostOfflineTxnsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="T24ClientHttpGet">
+    <wsdl:operation name="GetAccounts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that fetches accounts linked to a CIF.</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountsHttpGetIn" />
+      <wsdl:output message="tns:GetAccountsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that fetches customer details</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetCustomerDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that validates an account to check if it is closed or has a posting restriction.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateAccountHttpGetIn" />
+      <wsdl:output message="tns:ValidateAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceForAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method retrieves the account balance given an account.</wsdl:documentation>
+      <wsdl:input message="tns:GetBalanceForAccountHttpGetIn" />
+      <wsdl:output message="tns:GetBalanceForAccountHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS with a default web service port</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSHttpGetIn" />
+      <wsdl:output message="tns:PostRawOFSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithPort">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS on a specified port</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSWithPortHttpGetIn" />
+      <wsdl:output message="tns:PostRawOFSWithPortHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS on a specified port and IP address</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSWithIPHttpGetIn" />
+      <wsdl:output message="tns:PostRawOFSWithIPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method returns exchange rates for the major currencies</wsdl:documentation>
+      <wsdl:input message="tns:GetExchangeRatesHttpGetIn" />
+      <wsdl:output message="tns:GetExchangeRatesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method to reverse a transaction given an FT number</wsdl:documentation>
+      <wsdl:input message="tns:ReverseTransactionHttpGetIn" />
+      <wsdl:output message="tns:ReverseTransactionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets the date of an environment</wsdl:documentation>
+      <wsdl:input message="tns:GetSystemDateHttpGetIn" />
+      <wsdl:output message="tns:GetSystemDateHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsT24Online">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method checks if T24 is online.</wsdl:documentation>
+      <wsdl:input message="tns:IsT24OnlineHttpGetIn" />
+      <wsdl:output message="tns:IsT24OnlineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method returns a company name given an ID.</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyHttpGetIn" />
+      <wsdl:output message="tns:GetCompanyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets details about a particular FT.</wsdl:documentation>
+      <wsdl:input message="tns:GetFTDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetFTDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTTDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets details about a particular TT.</wsdl:documentation>
+      <wsdl:input message="tns:GetTTDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetTTDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LockFunds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that locks funds on a particular account</wsdl:documentation>
+      <wsdl:input message="tns:LockFundsHttpGetIn" />
+      <wsdl:output message="tns:LockFundsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockFunds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that unlocks funds on a particular account</wsdl:documentation>
+      <wsdl:input message="tns:UnlockFundsHttpGetIn" />
+      <wsdl:output message="tns:UnlockFundsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanSystemsPostOfflineTxns">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method checks if offline systems are allowed to post transactions.</wsdl:documentation>
+      <wsdl:input message="tns:CanSystemsPostOfflineTxnsHttpGetIn" />
+      <wsdl:output message="tns:CanSystemsPostOfflineTxnsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="T24ClientHttpPost">
+    <wsdl:operation name="GetAccounts">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that fetches accounts linked to a CIF.</wsdl:documentation>
+      <wsdl:input message="tns:GetAccountsHttpPostIn" />
+      <wsdl:output message="tns:GetAccountsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that fetches customer details</wsdl:documentation>
+      <wsdl:input message="tns:GetCustomerDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetCustomerDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that validates an account to check if it is closed or has a posting restriction.</wsdl:documentation>
+      <wsdl:input message="tns:ValidateAccountHttpPostIn" />
+      <wsdl:output message="tns:ValidateAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceForAccount">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method retrieves the account balance given an account.</wsdl:documentation>
+      <wsdl:input message="tns:GetBalanceForAccountHttpPostIn" />
+      <wsdl:output message="tns:GetBalanceForAccountHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFS">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS with a default web service port</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSHttpPostIn" />
+      <wsdl:output message="tns:PostRawOFSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithPort">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS on a specified port</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSWithPortHttpPostIn" />
+      <wsdl:output message="tns:PostRawOFSWithPortHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithIP">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method posts a RAW OFS on a specified port and IP address</wsdl:documentation>
+      <wsdl:input message="tns:PostRawOFSWithIPHttpPostIn" />
+      <wsdl:output message="tns:PostRawOFSWithIPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRates">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method returns exchange rates for the major currencies</wsdl:documentation>
+      <wsdl:input message="tns:GetExchangeRatesHttpPostIn" />
+      <wsdl:output message="tns:GetExchangeRatesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method to reverse a transaction given an FT number</wsdl:documentation>
+      <wsdl:input message="tns:ReverseTransactionHttpPostIn" />
+      <wsdl:output message="tns:ReverseTransactionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets the date of an environment</wsdl:documentation>
+      <wsdl:input message="tns:GetSystemDateHttpPostIn" />
+      <wsdl:output message="tns:GetSystemDateHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsT24Online">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method checks if T24 is online.</wsdl:documentation>
+      <wsdl:input message="tns:IsT24OnlineHttpPostIn" />
+      <wsdl:output message="tns:IsT24OnlineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method returns a company name given an ID.</wsdl:documentation>
+      <wsdl:input message="tns:GetCompanyHttpPostIn" />
+      <wsdl:output message="tns:GetCompanyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFTDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets details about a particular FT.</wsdl:documentation>
+      <wsdl:input message="tns:GetFTDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetFTDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTTDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method gets details about a particular TT.</wsdl:documentation>
+      <wsdl:input message="tns:GetTTDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetTTDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LockFunds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that locks funds on a particular account</wsdl:documentation>
+      <wsdl:input message="tns:LockFundsHttpPostIn" />
+      <wsdl:output message="tns:LockFundsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UnlockFunds">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method that unlocks funds on a particular account</wsdl:documentation>
+      <wsdl:input message="tns:UnlockFundsHttpPostIn" />
+      <wsdl:output message="tns:UnlockFundsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanSystemsPostOfflineTxns">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Method checks if offline systems are allowed to post transactions.</wsdl:documentation>
+      <wsdl:input message="tns:CanSystemsPostOfflineTxnsHttpPostIn" />
+      <wsdl:output message="tns:CanSystemsPostOfflineTxnsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="T24ClientSoap" type="tns:T24ClientSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAccounts">
+      <soap:operation soapAction="http://nbs.t24.org/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <soap:operation soapAction="http://nbs.t24.org/GetCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccount">
+      <soap:operation soapAction="http://nbs.t24.org/ValidateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceForAccount">
+      <soap:operation soapAction="http://nbs.t24.org/GetBalanceForAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFS">
+      <soap:operation soapAction="http://nbs.t24.org/PostRawOFS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithPort">
+      <soap:operation soapAction="http://nbs.t24.org/PostRawOFSWithPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithIP">
+      <soap:operation soapAction="http://nbs.t24.org/PostRawOFSWithIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRates">
+      <soap:operation soapAction="http://nbs.t24.org/GetExchangeRates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <soap:operation soapAction="http://nbs.t24.org/ReverseTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDate">
+      <soap:operation soapAction="http://nbs.t24.org/GetSystemDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsT24Online">
+      <soap:operation soapAction="http://nbs.t24.org/IsT24Online" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <soap:operation soapAction="http://nbs.t24.org/GetCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTDetails">
+      <soap:operation soapAction="http://nbs.t24.org/GetFTDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTTDetails">
+      <soap:operation soapAction="http://nbs.t24.org/GetTTDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockFunds">
+      <soap:operation soapAction="http://nbs.t24.org/LockFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockFunds">
+      <soap:operation soapAction="http://nbs.t24.org/UnlockFunds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanSystemsPostOfflineTxns">
+      <soap:operation soapAction="http://nbs.t24.org/CanSystemsPostOfflineTxns" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T24ClientSoap12" type="tns:T24ClientSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAccounts">
+      <soap12:operation soapAction="http://nbs.t24.org/GetAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <soap12:operation soapAction="http://nbs.t24.org/GetCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccount">
+      <soap12:operation soapAction="http://nbs.t24.org/ValidateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceForAccount">
+      <soap12:operation soapAction="http://nbs.t24.org/GetBalanceForAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFS">
+      <soap12:operation soapAction="http://nbs.t24.org/PostRawOFS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithPort">
+      <soap12:operation soapAction="http://nbs.t24.org/PostRawOFSWithPort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithIP">
+      <soap12:operation soapAction="http://nbs.t24.org/PostRawOFSWithIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRates">
+      <soap12:operation soapAction="http://nbs.t24.org/GetExchangeRates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <soap12:operation soapAction="http://nbs.t24.org/ReverseTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDate">
+      <soap12:operation soapAction="http://nbs.t24.org/GetSystemDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsT24Online">
+      <soap12:operation soapAction="http://nbs.t24.org/IsT24Online" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <soap12:operation soapAction="http://nbs.t24.org/GetCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTDetails">
+      <soap12:operation soapAction="http://nbs.t24.org/GetFTDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTTDetails">
+      <soap12:operation soapAction="http://nbs.t24.org/GetTTDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockFunds">
+      <soap12:operation soapAction="http://nbs.t24.org/LockFunds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockFunds">
+      <soap12:operation soapAction="http://nbs.t24.org/UnlockFunds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanSystemsPostOfflineTxns">
+      <soap12:operation soapAction="http://nbs.t24.org/CanSystemsPostOfflineTxns" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T24ClientHttpGet" type="tns:T24ClientHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetAccounts">
+      <http:operation location="/GetAccounts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <http:operation location="/GetCustomerDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccount">
+      <http:operation location="/ValidateAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceForAccount">
+      <http:operation location="/GetBalanceForAccount" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFS">
+      <http:operation location="/PostRawOFS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithPort">
+      <http:operation location="/PostRawOFSWithPort" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithIP">
+      <http:operation location="/PostRawOFSWithIP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRates">
+      <http:operation location="/GetExchangeRates" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <http:operation location="/ReverseTransaction" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDate">
+      <http:operation location="/GetSystemDate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsT24Online">
+      <http:operation location="/IsT24Online" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <http:operation location="/GetCompany" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTDetails">
+      <http:operation location="/GetFTDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTTDetails">
+      <http:operation location="/GetTTDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockFunds">
+      <http:operation location="/LockFunds" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockFunds">
+      <http:operation location="/UnlockFunds" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanSystemsPostOfflineTxns">
+      <http:operation location="/CanSystemsPostOfflineTxns" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="T24ClientHttpPost" type="tns:T24ClientHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetAccounts">
+      <http:operation location="/GetAccounts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDetails">
+      <http:operation location="/GetCustomerDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAccount">
+      <http:operation location="/ValidateAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalanceForAccount">
+      <http:operation location="/GetBalanceForAccount" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFS">
+      <http:operation location="/PostRawOFS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithPort">
+      <http:operation location="/PostRawOFSWithPort" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostRawOFSWithIP">
+      <http:operation location="/PostRawOFSWithIP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeRates">
+      <http:operation location="/GetExchangeRates" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <http:operation location="/ReverseTransaction" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemDate">
+      <http:operation location="/GetSystemDate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsT24Online">
+      <http:operation location="/IsT24Online" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompany">
+      <http:operation location="/GetCompany" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFTDetails">
+      <http:operation location="/GetFTDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTTDetails">
+      <http:operation location="/GetTTDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LockFunds">
+      <http:operation location="/LockFunds" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UnlockFunds">
+      <http:operation location="/UnlockFunds" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanSystemsPostOfflineTxns">
+      <http:operation location="/CanSystemsPostOfflineTxns" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="T24Client">
+    <wsdl:port name="T24ClientSoap" binding="tns:T24ClientSoap">
+      <soap:address location="http://10.40.1.93:8080/T24WS/T24Client.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T24ClientSoap12" binding="tns:T24ClientSoap12">
+      <soap12:address location="http://10.40.1.93:8080/T24WS/T24Client.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T24ClientHttpGet" binding="tns:T24ClientHttpGet">
+      <http:address location="http://10.40.1.93:8080/T24WS/T24Client.asmx" />
+    </wsdl:port>
+    <wsdl:port name="T24ClientHttpPost" binding="tns:T24ClientHttpPost">
+      <http:address location="http://10.40.1.93:8080/T24WS/T24Client.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

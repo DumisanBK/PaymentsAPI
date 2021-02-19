@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd3" namespace="http://tempuri.org" />
+      <xsd:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd4" namespace="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" />
+      <xsd:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd6" namespace="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" />
+      <xsd:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" />
+      <xsd:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+      <xsd:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.AX.Framework.Services" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="SRWBPaymentsAPIServiceTransferPaymentRequest">
+    <wsdl:part name="parameters" element="tns:SRWBPaymentsAPIServiceTransferPaymentRequest" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServiceTransferPaymentRequest_Headers">
+    <wsdl:part xmlns:q1="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q1:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServiceTransferPaymentResponse">
+    <wsdl:part name="parameters" element="tns:SRWBPaymentsAPIServiceTransferPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIService_transferPayment_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q2:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServicePostPaymentRequest">
+    <wsdl:part name="parameters" element="tns:SRWBPaymentsAPIServicePostPaymentRequest" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServicePostPaymentRequest_Headers">
+    <wsdl:part xmlns:q3="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q3:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServicePostPaymentResponse">
+    <wsdl:part name="parameters" element="tns:SRWBPaymentsAPIServicePostPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIService_postPayment_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q4:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServiceReversePaymentRequest">
+    <wsdl:part name="parameters" element="tns:SRWBPaymentsAPIServiceReversePaymentRequest" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServiceReversePaymentRequest_Headers">
+    <wsdl:part xmlns:q5="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q5:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServiceReversePaymentResponse">
+    <wsdl:part name="parameters" element="tns:SRWBPaymentsAPIServiceReversePaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIService_reversePayment_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q6:AifFault" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServiceQueryAccountRequest">
+    <wsdl:part name="parameters" element="tns:SRWBPaymentsAPIServiceQueryAccountRequest" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServiceQueryAccountRequest_Headers">
+    <wsdl:part xmlns:q7="http://schemas.microsoft.com/dynamics/2010/01/datacontracts" name="context" element="q7:CallContext" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIServiceQueryAccountResponse">
+    <wsdl:part name="parameters" element="tns:SRWBPaymentsAPIServiceQueryAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SRWBPaymentsAPIService_queryAccount_AifFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.microsoft.com/dynamics/2008/01/documents/Fault" name="detail" element="q8:AifFault" />
+  </wsdl:message>
+  <wsdl:portType name="SRWBPaymentsAPIService">
+    <wsdl:operation name="transferPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/transferPayment" name="SRWBPaymentsAPIServiceTransferPaymentRequest" message="tns:SRWBPaymentsAPIServiceTransferPaymentRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/transferPaymentResponse" name="SRWBPaymentsAPIServiceTransferPaymentResponse" message="tns:SRWBPaymentsAPIServiceTransferPaymentResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/transferPaymentAifFaultFault" name="AifFaultFault" message="tns:SRWBPaymentsAPIService_transferPayment_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="postPayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/postPayment" name="SRWBPaymentsAPIServicePostPaymentRequest" message="tns:SRWBPaymentsAPIServicePostPaymentRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/postPaymentResponse" name="SRWBPaymentsAPIServicePostPaymentResponse" message="tns:SRWBPaymentsAPIServicePostPaymentResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/postPaymentAifFaultFault" name="AifFaultFault" message="tns:SRWBPaymentsAPIService_postPayment_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="reversePayment">
+      <wsdl:input wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/reversePayment" name="SRWBPaymentsAPIServiceReversePaymentRequest" message="tns:SRWBPaymentsAPIServiceReversePaymentRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/reversePaymentResponse" name="SRWBPaymentsAPIServiceReversePaymentResponse" message="tns:SRWBPaymentsAPIServiceReversePaymentResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/reversePaymentAifFaultFault" name="AifFaultFault" message="tns:SRWBPaymentsAPIService_reversePayment_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="queryAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/queryAccount" name="SRWBPaymentsAPIServiceQueryAccountRequest" message="tns:SRWBPaymentsAPIServiceQueryAccountRequest" />
+      <wsdl:output wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/queryAccountResponse" name="SRWBPaymentsAPIServiceQueryAccountResponse" message="tns:SRWBPaymentsAPIServiceQueryAccountResponse" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/SRWBPaymentsAPIService/queryAccountAifFaultFault" name="AifFaultFault" message="tns:SRWBPaymentsAPIService_queryAccount_AifFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

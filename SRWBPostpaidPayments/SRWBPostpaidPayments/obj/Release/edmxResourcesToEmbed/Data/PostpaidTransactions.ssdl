@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SRWBPostpaidModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="PostPaidExceptions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InnerMessage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Method" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Class" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SignedInUser" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateGenerated" Type="datetime" Nullable="false" />
+    <Property Name="System" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FundingAcct" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="varchar" MaxLength="100" />
+    <Property Name="CustomerNumber" Type="varchar" MaxLength="50" />
+    <Property Name="Currency" Type="varchar" MaxLength="50" />
+    <Property Name="Balance" Type="money" />
+    <Property Name="StatusCode" Type="int" />
+    <Property Name="StatusDescription" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentId" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentReference" Type="varchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+    <Property Name="PaymentMode" Type="varchar" MaxLength="50" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="AccessingPhone" Type="varchar" MaxLength="50" />
+    <Property Name="FriendlyName" Type="varchar" MaxLength="500" />
+    <Property Name="OfsRequest" Type="nvarchar(max)" />
+    <Property Name="OfsResponse" Type="nvarchar(max)" />
+    <Property Name="TxnRef" Type="varchar" MaxLength="50" />
+    <Property Name="ProfileID" Type="varchar" MaxLength="100" />
+    <Property Name="EffectivePhone" Type="varchar" MaxLength="100" />
+    <Property Name="Reversed" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="SRWBPostpaidModelStoreContainer">
+    <EntitySet Name="PostPaidExceptions" EntityType="Self.PostPaidExceptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

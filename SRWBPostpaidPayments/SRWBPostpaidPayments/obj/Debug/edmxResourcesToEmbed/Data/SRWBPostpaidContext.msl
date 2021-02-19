@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SRWBPostpaidModelStoreContainer" CdmEntityContainer="SRWBPostpaidContext">
+    <EntitySetMapping Name="PostPaidExceptions">
+      <EntityTypeMapping TypeName="SRWBPostpaidModel.PostPaidException">
+        <MappingFragment StoreEntitySet="PostPaidExceptions">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InnerMessage" ColumnName="InnerMessage" />
+          <ScalarProperty Name="Method" ColumnName="Method" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="SignedInUser" ColumnName="SignedInUser" />
+          <ScalarProperty Name="DateGenerated" ColumnName="DateGenerated" />
+          <ScalarProperty Name="System" ColumnName="System" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="SRWBPostpaidModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="Teller" ColumnName="Teller" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="FundingAcct" ColumnName="FundingAcct" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+          <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="AccessingPhone" ColumnName="AccessingPhone" />
+          <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+          <ScalarProperty Name="OfsRequest" ColumnName="OfsRequest" />
+          <ScalarProperty Name="OfsResponse" ColumnName="OfsResponse" />
+          <ScalarProperty Name="TxnRef" ColumnName="TxnRef" />
+          <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+          <ScalarProperty Name="EffectivePhone" ColumnName="EffectivePhone" />
+          <ScalarProperty Name="Reversed" ColumnName="Reversed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

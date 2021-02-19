@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" />
+  <xs:complexType name="SRWBPaymentsAPIPostPaymentResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q1:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmPaymentID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmStatusCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="parmStatusDescription" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SRWBPaymentsAPIPostPaymentResponse" nillable="true" type="tns:SRWBPaymentsAPIPostPaymentResponse" />
+  <xs:complexType name="SRWBPaymentsAPIServiceCustomerData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Microsoft.Dynamics.Ax.Xpp" base="q2:XppObjectBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="parmAmountOutstanding" type="xs:decimal" />
+          <xs:element minOccurs="0" name="parmCustomerName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SRWBPaymentsAPIServiceCustomerData" nillable="true" type="tns:SRWBPaymentsAPIServiceCustomerData" />
+</xs:schema>

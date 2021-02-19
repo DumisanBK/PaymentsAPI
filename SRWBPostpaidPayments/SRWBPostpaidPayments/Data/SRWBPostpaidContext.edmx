@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SRWBPostpaidModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PostPaidExceptions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InnerMessage" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Method" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Class" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SignedInUser" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateGenerated" Type="datetime" Nullable="false" />
+          <Property Name="System" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transactions">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FundingAcct" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="100" />
+          <Property Name="CustomerNumber" Type="varchar" MaxLength="50" />
+          <Property Name="Currency" Type="varchar" MaxLength="50" />
+          <Property Name="Balance" Type="money" />
+          <Property Name="StatusCode" Type="int" />
+          <Property Name="StatusDescription" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentId" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentReference" Type="varchar" MaxLength="50" />
+          <Property Name="PaymentDate" Type="datetime" Nullable="false" />
+          <Property Name="PaymentMode" Type="varchar" MaxLength="50" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="AccessingPhone" Type="varchar" MaxLength="50" />
+          <Property Name="FriendlyName" Type="varchar" MaxLength="500" />
+          <Property Name="OfsRequest" Type="nvarchar(max)" />
+          <Property Name="OfsResponse" Type="nvarchar(max)" />
+          <Property Name="TxnRef" Type="varchar" MaxLength="50" />
+          <Property Name="ProfileID" Type="varchar" MaxLength="100" />
+          <Property Name="EffectivePhone" Type="varchar" MaxLength="100" />
+          <Property Name="Reversed" Type="bit" />
+          <Property Name="Message" Type="varchar" MaxLength="50" />
+          <Property Name="Teller" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="SRWBPostpaidModelStoreContainer">
+          <EntitySet Name="PostPaidExceptions" EntityType="Self.PostPaidExceptions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SRWBPostpaidModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PostPaidException">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InnerMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SignedInUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateGenerated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="System" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Transaction">
+          <Key>
+            <PropertyRef Name="RecordID" />
+          </Key>
+          <Property Name="RecordID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FundingAcct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="StatusCode" Type="Int32" />
+          <Property Name="StatusDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="AccessingPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FriendlyName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OfsRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OfsResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TxnRef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EffectivePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Reversed" Type="Boolean" />
+          <Property Name="Message" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Teller" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="SRWBPostpaidContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PostPaidExceptions" EntityType="Self.PostPaidException" />
+          <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SRWBPostpaidModelStoreContainer" CdmEntityContainer="SRWBPostpaidContext">
+          <EntitySetMapping Name="PostPaidExceptions">
+            <EntityTypeMapping TypeName="SRWBPostpaidModel.PostPaidException">
+              <MappingFragment StoreEntitySet="PostPaidExceptions">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="InnerMessage" ColumnName="InnerMessage" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="SignedInUser" ColumnName="SignedInUser" />
+                <ScalarProperty Name="DateGenerated" ColumnName="DateGenerated" />
+                <ScalarProperty Name="System" ColumnName="System" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transactions">
+            <EntityTypeMapping TypeName="SRWBPostpaidModel.Transaction">
+              <MappingFragment StoreEntitySet="Transactions">
+                <ScalarProperty Name="Teller" ColumnName="Teller" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+                <ScalarProperty Name="FundingAcct" ColumnName="FundingAcct" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Balance" ColumnName="Balance" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="StatusDescription" ColumnName="StatusDescription" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="PaymentReference" ColumnName="PaymentReference" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="AccessingPhone" ColumnName="AccessingPhone" />
+                <ScalarProperty Name="FriendlyName" ColumnName="FriendlyName" />
+                <ScalarProperty Name="OfsRequest" ColumnName="OfsRequest" />
+                <ScalarProperty Name="OfsResponse" ColumnName="OfsResponse" />
+                <ScalarProperty Name="TxnRef" ColumnName="TxnRef" />
+                <ScalarProperty Name="ProfileID" ColumnName="ProfileID" />
+                <ScalarProperty Name="EffectivePhone" ColumnName="EffectivePhone" />
+                <ScalarProperty Name="Reversed" ColumnName="Reversed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

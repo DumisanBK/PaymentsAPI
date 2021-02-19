@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org" elementFormDefault="qualified" targetNamespace="http://tempuri.org" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://41.87.3.158:8101/DynamicsAx/Services/SRWBPaymentsAPIServices?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" />
+  <xs:element name="SRWBPaymentsAPIServiceTransferPaymentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paymentID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paymentReference" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="bankAccount" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SRWBPaymentsAPIServiceTransferPaymentResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SRWBPaymentsAPIServicePostPaymentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paymentReference" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="paymentDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="paymentMode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SRWBPaymentsAPIServicePostPaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q1:SRWBPaymentsAPIPostPaymentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SRWBPaymentsAPIServiceReversePaymentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="paymentID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="paymentReference" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="amount" type="xs:decimal" />
+        <xs:element minOccurs="0" name="paymentDate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="paymentMode" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SRWBPaymentsAPIServiceReversePaymentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q2:SRWBPaymentsAPIPostPaymentResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SRWBPaymentsAPIServiceQueryAccountRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SRWBPaymentsAPIServiceQueryAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Dynamics.Ax.Application" minOccurs="0" name="response" nillable="true" type="q3:SRWBPaymentsAPIServiceCustomerData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

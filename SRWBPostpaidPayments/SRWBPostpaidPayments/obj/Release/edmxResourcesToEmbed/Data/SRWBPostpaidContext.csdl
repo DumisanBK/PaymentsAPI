@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SRWBPostpaidModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="PostPaidException">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InnerMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SignedInUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateGenerated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="System" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FundingAcct" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="StatusCode" Type="Int32" />
+    <Property Name="StatusDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentReference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PaymentDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AccessingPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FriendlyName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="OfsRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OfsResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TxnRef" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProfileID" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EffectivePhone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Reversed" Type="Boolean" />
+    <Property Name="Message" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Teller" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="SRWBPostpaidContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="PostPaidExceptions" EntityType="Self.PostPaidException" />
+    <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+  </EntityContainer>
+</Schema>
